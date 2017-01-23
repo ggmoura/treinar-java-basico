@@ -27,6 +27,8 @@ public class AtividadeMap {
 		nomes.add("Bruno");
 		nomes.add("Gabriel");
 		
+		nomes.sort((a, b) -> a.compareTo(b));
+		
 		for (String nome : nomes) {
 			primeiraLetra = nome.charAt(0);//recupera a primeira letra, representa a posicao 0
 			if (!mapNomes.containsKey(primeiraLetra)) {
@@ -40,7 +42,6 @@ public class AtividadeMap {
 		for (Entry<Character, List<String>> entry : entrySet) {
 			System.out.println(entry);
 		}
-		
 		
 	}
 
