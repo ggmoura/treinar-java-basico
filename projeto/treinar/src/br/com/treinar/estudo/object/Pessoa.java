@@ -1,10 +1,24 @@
 package br.com.treinar.estudo.object;
 
-public class Pessoa {
+import br.com.treinar.estudo.object.tipodado.Sexo;
 
-	private String nome;
+public class Pessoa implements Comparable<Pessoa> {
+
 	private Integer idade;
+	private String nome;
+	private Sexo sexo;
 
+	public Pessoa() {
+		super();
+	}
+	
+	public Pessoa(String nome, Integer idade, Sexo sexo) {
+		super();
+		this.idade = idade;
+		this.nome = nome;
+		this.sexo = sexo;
+	}
+	
 	public String getNome() {
 		return nome;
 	}
@@ -19,6 +33,14 @@ public class Pessoa {
 
 	public void setIdade(Integer idade) {
 		this.idade = idade;
+	}
+
+	public Sexo getSexo() {
+		return sexo;
+	}
+
+	public void setSexo(Sexo sexo) {
+		this.sexo = sexo;
 	}
 
 	@Override
@@ -46,5 +68,11 @@ public class Pessoa {
 		} else if (!nome.equals(other.nome))
 			return false;
 		return true;
+	}
+
+	//metodo compareTo, definido na interface Comparable, utilizado na ordenacao <b>OBRIGATORIO</b>
+	@Override
+	public int compareTo(Pessoa o) {
+		return this.idade.compareTo(o.idade);
 	}
 }
