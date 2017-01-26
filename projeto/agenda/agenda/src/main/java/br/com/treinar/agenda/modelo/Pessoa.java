@@ -3,7 +3,7 @@ package br.com.treinar.agenda.modelo;
 public class Pessoa {
 
 	private String nome;
-	private Integer idade;
+	private Sexo sexo;
 
 	public String getNome() {
 		return nome;
@@ -13,12 +13,12 @@ public class Pessoa {
 		this.nome = nome;
 	}
 
-	public Integer getIdade() {
-		return idade;
+	public Sexo getSexo() {
+		return sexo;
 	}
 
-	public void setIdade(Integer idade) {
-		this.idade = idade;
+	public void setSexo(Sexo sexo) {
+		this.sexo = sexo;
 	}
 
 }
