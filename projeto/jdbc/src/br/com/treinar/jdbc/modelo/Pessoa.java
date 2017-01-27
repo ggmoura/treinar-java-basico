@@ -32,4 +32,9 @@ public class Pessoa extends Entity<Long> {
 		this.dataNascimento = dataNascimento;
 	}
 
+	@Override
+	public String toString() {
+		return "Pessoa [nome=" + nome + ", sexo=" + sexo + ", dataNascimento=" + dataNascimento + "]";
+	}
+
 }

@@ -25,7 +25,7 @@ public class Teste {
 		
 		PessoaDAO dao = new PessoaDAO();
 		dao.inserirPessoa(p);
-		
+		System.out.println("Pessoa gravada com sucesso!");
 	}
 	
 }
