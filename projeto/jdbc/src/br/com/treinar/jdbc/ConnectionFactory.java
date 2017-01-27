@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class ConnectionFactory {
+	//SET @@global.time_zone = '+3:00';
 	public Connection getConnection() {
 		try {
 			return DriverManager.getConnection("jdbc:mysql://localhost/agenda", "root", "");

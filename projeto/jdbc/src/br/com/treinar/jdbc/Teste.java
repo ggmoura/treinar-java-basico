@@ -19,7 +19,7 @@ public class Teste {
 		p.setNome(leitor.nextLine());
 		System.out.print("Informe M (Masculino) ou F (Feminino): ");
 		p.setSexo(Sexo.valueOf(leitor.nextLine()));
-		System.out.print("Informe a data de nascimento (dd): ");
+		System.out.print("Informe a data de nascimento (dd/mm/yyyy): ");
 		p.setDataNascimento(df.parse(leitor.nextLine()));
 		leitor.close();
 		
