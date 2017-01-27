@@ -1,4 +1,5 @@
-package br.com.treinar.agenda.dao;
+package br.com.treinar.jdbc;
+
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,7 +7,7 @@ import java.sql.DriverManager;
 public class ConnectionFactory {
 	public Connection getConnection() {
 		try {
-			return DriverManager.getConnection("jdbc:mysql//localhost/agenda", "root", "");
+			return DriverManager.getConnection("jdbc:mysql://localhost/agenda", "root", "");
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}

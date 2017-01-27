@@ -1,8 +1,8 @@
-package br.com.treinar.agenda.modelo;
+package br.com.treinar.jdbc.modelo;
 
 import java.util.Date;
 
-public class Pessoa {
+public class Pessoa extends Entity<Long> {
 
 	private String nome;
 	private Sexo sexo;
