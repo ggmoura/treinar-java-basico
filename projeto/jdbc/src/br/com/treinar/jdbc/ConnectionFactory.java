@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class ConnectionFactory {
+	//create table pessoa ( id BIGINT NOT NULL AUTO_INCREMENT, nome VARCHAR(255), sexo int, dataNascimento DATE, primary key (id) )
 	//SET @@global.time_zone = '+3:00';
 	public Connection getConnection() {
 		try {

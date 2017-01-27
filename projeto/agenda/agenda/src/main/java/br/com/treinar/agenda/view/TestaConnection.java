@@ -13,3 +13,6 @@ public class TestaConnection {
 	}
 	
 }
+
+
+//create table pessoa ( id BIGINT NOT NULL AUTO_INCREMENT, nome VARCHAR(255), sexo int, dataNascimento DATE, primary key (id) )
