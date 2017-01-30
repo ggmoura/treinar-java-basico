@@ -9,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Pessoa {
@@ -16,14 +18,18 @@ public class Pessoa {
 	@Id
 	@GeneratedValue
 	private Long id;
-	
+
 	private String nome;
-	
+
 	@Enumerated(EnumType.STRING)
 	private Sexo sexo;
-	
+
+	@NotNull // campo nao pode ser nulo
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataNascimento;
+
+	@Transient // indica que este atributo nao sera um camo no banco de dados
+	private Integer idade;
 
 	public String getNome() {
 		return nome;
@@ -56,12 +62,5 @@ public class Pessoa {
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-	@Override
-	public String toString() {
-		return "Pessoa [id=" + id + ", nome=" + nome + ", sexo=" + sexo + ", dataNascimento=" + dataNascimento + "]";
-	}
-	
-	
 
 }

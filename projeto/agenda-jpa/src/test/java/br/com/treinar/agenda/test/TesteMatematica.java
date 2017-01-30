@@ -8,7 +8,7 @@ import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import br.com.treinar.agenda.modelo.service.Matamatica;
+import br.com.treinar.agenda.service.Matamatica;
 
 public class TesteMatematica {
 

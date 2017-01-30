@@ -32,10 +32,10 @@ public class TestePessoa {
 	public void testePersistPessoa() {
 		Pessoa p = new Pessoa();
 		p.setDataNascimento(new Date());
-		p.setNome("Maria Sophia");
+		p.setNome("Maria Sophia Moura");
 		p.setSexo(Sexo.F);
 		
-		em.getTransaction().begin();
+		em.getTransaction().begin();//reserva o registro para nao ser usado por outro usuario
 		em.persist(p);
 		em.getTransaction().commit();
 		
@@ -43,8 +43,8 @@ public class TestePessoa {
 	}
 
 	private Pessoa recuperarPessoa() {
-		Pessoa p = em.find(Pessoa.class, Long.valueOf(1));
-		return p;
+		Pessoa contato = em.find(Pessoa.class, Long.valueOf(1));
+		return contato;
 	}
 	
 }

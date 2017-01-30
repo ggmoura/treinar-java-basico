@@ -7,7 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Table(name="TB_Telefone")
+@Table(name = "TB_Telefone")
 @Entity
 public class Telefone {
 
@@ -16,7 +16,7 @@ public class Telefone {
 	private Long id;
 	private Integer ddd;
 	private Integer numero;
-	
+
 	@Enumerated(EnumType.ORDINAL)
 	private Operadora operadora;
 
@@ -43,5 +43,6 @@ public class Telefone {
 	public void setOperadora(Operadora operadora) {
 		this.operadora = operadora;
 	}
+
 
 }

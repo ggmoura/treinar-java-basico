@@ -1,0 +1,1 @@
+insert into Pessoa (dataNascimento, nome, sexo) values ('2012-11-15', 'Maria Sophia Moura', 'F')
