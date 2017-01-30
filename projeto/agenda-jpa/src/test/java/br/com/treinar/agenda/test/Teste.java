@@ -6,6 +6,9 @@ import java.util.Date;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 
+import org.junit.Assert;
+import org.junit.Test;
+
 import br.com.treinar.agenda.modelo.Agenda;
 import br.com.treinar.agenda.modelo.Contato;
 import br.com.treinar.agenda.modelo.Operadora;
@@ -15,7 +18,8 @@ import br.com.treinar.agenda.modelo.Telefone;
 
 public class Teste {
 
-	public static void main(String[] args) {
+	@Test
+	public void teste() {
 		
 		EntityManager em = Persistence.createEntityManagerFactory("agenda").createEntityManager();
 		Agenda a = new Agenda();
@@ -44,6 +48,8 @@ public class Teste {
 		em.getTransaction().begin();
 		em.persist(a);
 		em.getTransaction().commit();
+		
+		Assert.assertNotEquals(a.getId(), Integer.valueOf(0));
 	}
 	
 }

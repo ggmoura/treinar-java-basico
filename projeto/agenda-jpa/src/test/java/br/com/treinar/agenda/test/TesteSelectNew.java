@@ -11,7 +11,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import br.com.treinar.agenda.modelo.Agenda;
 import br.com.treinar.agenda.modelo.Contato;
 
 public class TesteSelectNew {
