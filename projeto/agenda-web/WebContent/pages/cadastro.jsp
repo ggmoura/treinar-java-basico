@@ -1,3 +1,5 @@
+<%@page import="br.com.treinar.agenda.modelo.Sexo"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -25,7 +27,17 @@
 				</tr>
 				<tr>
 					<th align="left">Sexo</th>
-					<td><input name="sexo" type="text"></td>
+					<td>
+						<%
+							List<Sexo> sexos = (List<Sexo>) request.getAttribute("opcoesSexos");
+							for(Sexo s : sexos) {
+								out.println("<input name=\"sexo\" type=\"radio\" value=\"");
+								out.print(s);
+								out.print("\">");
+								out.println(s.getDescricao());
+							}
+						%>
+					</td>
 				</tr>
 			</table>
 			<input type="submit" value="Cadastrar">

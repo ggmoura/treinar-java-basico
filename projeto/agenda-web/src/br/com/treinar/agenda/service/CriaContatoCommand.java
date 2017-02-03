@@ -28,7 +28,7 @@ public class CriaContatoCommand implements ICommand {
 		contato.setNome(nome);
 		contato.setTelefone(telefone);
 		contato.setEmail(email);
-		contato.setSexo(Sexo.valueOf(sexo));
+		contato.setSexo(Sexo.valueOf(sexo.trim()));
 		
 		if (!contatos.contains(contato)) {
 			contatos.add(contato);			

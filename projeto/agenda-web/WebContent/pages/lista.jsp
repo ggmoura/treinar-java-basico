@@ -37,7 +37,7 @@
 						out.println("</td>");
 						
 						out.println("<td>");
-						out.print(contato.getSexo());
+						out.print(contato.getSexo().getDescricao());
 						out.println("</td>");
 						
 						out.println("<td>X</td>");
@@ -45,6 +45,8 @@
 					}
 				%>
 			</table>
+			
+			<a href="<%=request.getContextPath() %>/pages/cadastro.jsp">Cadastrar</a>
 		</form>
 	</div>
 

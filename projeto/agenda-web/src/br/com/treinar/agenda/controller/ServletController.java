@@ -28,6 +28,7 @@ public class ServletController extends HttpServlet {
 		comandos = new HashMap<>();
 		comandos.put("cad", "br.com.treinar.agenda.service.CriaContatoCommand");
 		comandos.put("rem", "br.com.treinar.agenda.service.RemoveContatoCommand");
+		comandos.put("acs", "br.com.treinar.agenda.service.AcessaTelaContatoCommand");
 		comandos.put("lis", "br.com.treinar.agenda.service.ListaContatoCommand");
 	}
 
@@ -40,7 +41,7 @@ public class ServletController extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher(goTo);
 			dispatcher.forward(request, response);
 		} catch (Exception e) {
-			System.out.println("zica");
+			e.printStackTrace();
 		}
 	}
 
