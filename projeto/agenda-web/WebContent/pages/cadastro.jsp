@@ -6,7 +6,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Cadastro Contato</title>
+	<title>Cadastro Contato</title>
+	<script type="text/javascript" src="js/agenda.js"></script>
 </head>
 <body>
 	<div align="center">
@@ -23,7 +24,7 @@
 				</tr>
 				<tr>
 					<th align="left">E-Mail</th>
-					<td><input name="email" type="text"></td>
+					<td><input id="email" name="email" type="text"></td>
 				</tr>
 				<tr>
 					<th align="left">Sexo</th>
@@ -40,7 +41,7 @@
 					</td>
 				</tr>
 			</table>
-			<input type="submit" value="Cadastrar">
+			<input type="submit" value="Cadastrar" onclick="return validarCadastro()">
 		</form>
 	</div>
 

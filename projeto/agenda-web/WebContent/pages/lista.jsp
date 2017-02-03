@@ -46,7 +46,7 @@
 				%>
 			</table>
 			
-			<a href="<%=request.getContextPath() %>/pages/cadastro.jsp">Cadastrar</a>
+			<a href="<%=request.getContextPath() %>/cadastro.maca?command=acs">Cadastrar</a>
 		</form>
 	</div>
 
