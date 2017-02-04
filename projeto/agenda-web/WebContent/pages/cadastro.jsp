@@ -13,6 +13,10 @@
 	<div align="center">
 		<form action="cadastro.maca">
 			<input type="hidden" id="command" name="command" value="cad">
+			Nome Usuario:&#160;&#160;<span id="nomeUsuario">${nomeUsuario}</span>
+			<br />
+			<br />
+			<br />
 			<table style="width: 100%">
 				<tr>
 					<th align="left">Nome</th>
@@ -30,7 +34,7 @@
 					<th align="left">Sexo</th>
 					<td>
 						<%
-							List<Sexo> sexos = (List<Sexo>) request.getAttribute("opcoesSexos");
+							List<Sexo> sexos = (List<Sexo>) request.getServletContext().getAttribute("opcoesSexos");
 							for(Sexo s : sexos) {
 								out.println("<input name=\"sexo\" type=\"radio\" value=\"");
 								out.print(s);

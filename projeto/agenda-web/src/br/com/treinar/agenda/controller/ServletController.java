@@ -30,6 +30,7 @@ public class ServletController extends HttpServlet {
 		comandos.put("rem", "br.com.treinar.agenda.service.RemoveContatoCommand");
 		comandos.put("acs", "br.com.treinar.agenda.service.AcessaTelaContatoCommand");
 		comandos.put("lis", "br.com.treinar.agenda.service.ListaContatoCommand");
+		comandos.put("lga", "br.com.treinar.agenda.service.LoginCommand");
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
