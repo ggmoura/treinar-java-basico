@@ -8,6 +8,8 @@ public class Contato {
 
 	private String email;
 
+	private TipoTelefone tipoTelefone;
+
 	private Sexo sexo;
 
 	public String getNome() {
@@ -65,6 +67,14 @@ public class Contato {
 		} else if (!telefone.equals(other.telefone))
 			return false;
 		return true;
+	}
+
+	public TipoTelefone getTipoTelefone() {
+		return tipoTelefone;
+	}
+
+	public void setTipoTelefone(TipoTelefone tipoTelefone) {
+		this.tipoTelefone = tipoTelefone;
 	}
 
 }

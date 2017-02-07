@@ -42,7 +42,7 @@ public class ServletController extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher(goTo);
 			dispatcher.forward(request, response);
 		} catch (Exception e) {
-			e.printStackTrace();
+			throw new ServletException(e);
 		}
 	}
 

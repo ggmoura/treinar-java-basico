@@ -27,7 +27,7 @@ public class AgendaListener implements ServletContextListener {
 	 * @see ServletContextListener#contextDestroyed(ServletContextEvent)
 	 */
 	public void contextDestroyed(ServletContextEvent sce) {
-		// TODO Auto-generated method stub
+		System.out.println("Servidor finalizado");
 	}
 
 	/**
@@ -36,6 +36,7 @@ public class AgendaListener implements ServletContextListener {
 	public void contextInitialized(ServletContextEvent sce) {
 		List<Sexo> sexos = Arrays.asList(Sexo.values());
 		sce.getServletContext().setAttribute("opcoesSexos", sexos);
+		System.out.println("Servidor inicializado");
 	}
 
 }

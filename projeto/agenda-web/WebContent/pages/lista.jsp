@@ -1,6 +1,7 @@
 <%@ page import="br.com.treinar.agenda.modelo.Contato"%>
 <%@ page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,44 +12,32 @@
 	<div align="center">
 		<form action="cadastro.maca">
 			<input type="hidden" name="command" value="rem">
-			<table>
+			<table border="1">
 				<tr>
+					<th>Linha</th>
 					<th>Nome</th>
 					<th>Telefone</th>
+					<th>Tipo Telefone</th>
 					<th>E-Mail</th>
 					<th>Sexo</th>
 					<th>Excluir</th>
 				</tr>
-				<% 
-					List<Contato> contatos = (List<Contato>) request.getAttribute("contatos");
-					for(Contato contato : contatos) {
-						out.println("<tr>");
-						
-						out.println("<td>");
-						out.print(contato.getNome());
-						out.println("</td>");
-						
-						out.println("<td>");
-						out.print(contato.getTelefone());
-						out.println("</td>");
-						
-						out.println("<td>");
-						out.print(contato.getEmail());
-						out.println("</td>");
-						
-						out.println("<td>");
-						out.print(contato.getSexo().getDescricao());
-						out.println("</td>");
-						
-						out.println("<td>X</td>");
-						out.println("</tr>");	
-					}
-				%>
+				<c:forEach items="${contatos}" var="contato" varStatus="i">
+					<tr>
+						<td>${i.index}</td>
+						<td>${contato.nome}</td>
+						<td>${contato.telefone}</td>
+						<td>${contato.tipoTelefone.descricao}</td>
+						<td>${contato.email}</td>
+						<td>${contato.sexo.descricao}</td>
+						<td><input type="submit" value="Excluir"></td>
+					</tr>
+				</c:forEach>
 			</table>
 			
 			<a href="<%=request.getContextPath() %>/cadastro.maca?command=acs">Cadastrar</a>
 		</form>
 	</div>
-
+	<jsp:include page="/pages/rodape.jsp"/>
 </body>
 </html>
