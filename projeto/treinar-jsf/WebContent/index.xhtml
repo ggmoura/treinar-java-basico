@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head></h:head>
+<body>
+	<h:messages id="messages" />
+	<h:form id="my_form">
+		<h:panelGrid columns="2">
+			<h:outputText id="labelNome" value="Nome:" />
+			<h:inputText value="#{helloWorld.contato.nome}" required="true"
+				label="Nome" />
+
+			<h:outputLabel value="E-mail:" />
+			<h:inputText value="#{helloWorld.contato.email}" required="true"
+				requiredMessage="O E-mail eh obrigatorio - Deu zica" />
+
+			<h:outputLabel value="Telefone:" />
+			<h:panelGroup layout="block">
+				<h:inputText id="telefone" value="#{helloWorld.contato.telefone}"
+					required="true">
+					<f:converter converterId="br.com.treinar.agenda.util.TelefoneConverter"/>
+					<f:validator validatorId="br.com.treinar.agenda.util.TelefoneValidator"/>
+				</h:inputText>
+				<h:message for="telefone" />
+			</h:panelGroup>
+			<h:outputLabel value="Tipo Telefone" />
+			
+			<h:selectOneRadio value="#{helloWorld.contato.telefone.tipoTelefone}">
+				<f:selectItems value="#{agendaApplication.tiposTelefones}" var="tipo" itemValue="#{tipo}" itemLabel="#{tipo.descricao}"/>
+			</h:selectOneRadio>
+
+			<h:commandButton action="#{helloWorld.salvar()}" value="Salvar" />
+
+		</h:panelGrid>
+	</h:form>
+	<h:message id="sucesso" />
+
+</body>
+</html>
