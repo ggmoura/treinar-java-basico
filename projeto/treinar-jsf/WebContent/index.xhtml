@@ -21,16 +21,26 @@
 			<h:panelGroup layout="block">
 				<h:inputText id="telefone" value="#{helloWorld.contato.telefone}"
 					required="true">
-					<f:converter converterId="br.com.treinar.agenda.util.TelefoneConverter"/>
-					<f:validator validatorId="br.com.treinar.agenda.util.TelefoneValidator"/>
+					<f:converter
+						converterId="br.com.treinar.agenda.util.TelefoneConverter" />
+					<f:validator
+						validatorId="br.com.treinar.agenda.util.TelefoneValidator" />
 				</h:inputText>
 				<h:message for="telefone" />
 			</h:panelGroup>
 			<h:outputLabel value="Tipo Telefone" />
-			
+
 			<h:selectOneRadio value="#{helloWorld.contato.telefone.tipoTelefone}">
-				<f:selectItems value="#{agendaApplication.tiposTelefones}" var="tipo" itemValue="#{tipo}" itemLabel="#{tipo.descricao}"/>
+				<f:selectItems value="#{agendaApplication.tiposTelefones}"
+					var="tipo" itemValue="#{tipo}" itemLabel="#{tipo.descricao}" />
 			</h:selectOneRadio>
+
+			<h:outputLabel value="Sexo" />
+			<h:selectOneMenu id="sexo" label="Sexo" value="#{helloWorld.contato.sexo}" required="true">
+				<f:selectItem itemLabel="Selecione" noSelectionOption="true"/>
+				<f:selectItems value="#{agendaApplication.sexos}" var="sexo" itemValue="#{sexo}" itemLabel="#{sexo.descricao}" />
+			</h:selectOneMenu>
+
 
 			<h:commandButton action="#{helloWorld.salvar()}" value="Salvar" />
 
