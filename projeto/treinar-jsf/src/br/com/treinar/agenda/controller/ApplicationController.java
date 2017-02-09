@@ -5,12 +5,14 @@ import java.util.Arrays;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 
 import br.com.treinar.agenda.modelo.Sexo;
 import br.com.treinar.agenda.modelo.TipoTelefone;
 
 @ManagedBean(name = "agendaApplication")
+@ApplicationScoped
 public class ApplicationController {
 
 	private List<TipoTelefone> tiposTelefones;

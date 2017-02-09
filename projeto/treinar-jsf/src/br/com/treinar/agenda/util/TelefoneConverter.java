@@ -24,7 +24,10 @@ public class TelefoneConverter implements Converter  {
 	public String getAsString(FacesContext context, UIComponent component, Object value) {
 		
 		Telefone telefone = (Telefone) value;
-		String telefoneStr = "(" + telefone.getDdd() + ")" + telefone.getNumero();
+		String telefoneStr = "";
+		if (telefone != null && telefone.getDdd() != null && telefone.getNumero() != null) {
+			telefoneStr = "(" + telefone.getDdd() + ")" + telefone.getNumero();
+		}
 		
 		return telefoneStr;
 	}

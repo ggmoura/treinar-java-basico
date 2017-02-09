@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:body>
+	<h2>Lista de Contatos</h2>
+	<h:form>
+		<h:commandButton action="#{helloWorld.novoContato()}" value="Novo" />
+		<h:dataTable value="#{helloWorld.contatos}" var="contato"
+			styleClass="employeeTable" headerClass="employeeTableHeader"
+			rowClasses="employeeTableOddRow,employeeTableEvenRow">
+			<h:column>
+				<f:facet name="header">Nome</f:facet>
+				<h:outputText value="#{contato.nome}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">E-mail</f:facet>
+				<h:outputText value="#{contato.email}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">E-mail</f:facet>
+				<h:outputText value="#{contato.sexo.descricao}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Telefone</f:facet>
+				<h:outputText value="#{contato.telefone}">
+					<f:converter converterId="br.com.treinar.agenda.util.TelefoneConverter"/>
+				</h:outputText>
+			</h:column>
+			<h:column>
+				<f:facet name="header">Tipo Telefone</f:facet>
+				<h:outputText value="#{contato.sexo.descricao}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Editar</f:facet>
+				<h:commandButton action="#{helloWorld.editar(contato)}" value="Editar" />
+			</h:column>
+		</h:dataTable>
+	</h:form>
+</h:body>
+</html>
