@@ -1,6 +1,10 @@
 package br.com.treinar.agenda.util;
 
 public class AgendaException extends Exception {
+	
+	//Como 'AgendaException' estende 'Exception', ela é do tipo
+	//checked e obrigatoriamente deve ser tratada (try-catch)
+	//ou relançada (throws).
 
 	private static final long serialVersionUID = 5L;
 

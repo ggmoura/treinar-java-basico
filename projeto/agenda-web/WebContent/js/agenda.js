@@ -17,6 +17,9 @@ function validarCadastro() {
 	var retorno = true;
 	var msg = '';
 	if (email.indexOf('@') == -1) {
+		//indexOf -> retorna a posição que determinado caracter está 
+		//na variável, caso seja '-1' significa que o caracter não
+		//está presente.
 		msg = 'Email invalido ou nao informado	';
 		retorno = false;
 	}

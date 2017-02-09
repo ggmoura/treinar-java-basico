@@ -17,11 +17,16 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet Filter implementation class LoginFilter
  */
+
+//@WebFilter é uma anotação que avisa o servidor que essa classe é um filtro,
+//ou seja, filtra alguma informação e valida ou não.
 @WebFilter(dispatcherTypes = {
-				DispatcherType.REQUEST, 
-				DispatcherType.FORWARD, 
-				DispatcherType.INCLUDE, 
-				DispatcherType.ERROR
+		
+		//É possível implementar o filtro para essas quatro situações:
+				DispatcherType.REQUEST, //requisição
+				DispatcherType.FORWARD, //saindo do servidor
+				DispatcherType.INCLUDE, //inclusão
+				DispatcherType.ERROR    //erro
 		}
 					, urlPatterns = { "/*" }, servletNames = { "ServletController" })
 public class LoginFilter implements Filter {
