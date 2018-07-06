@@ -12,7 +12,8 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 @NamedQueries(value = { 
-	@NamedQuery(name="Agenda.buscarPeloNome", query="select a from Agenda a where a.id = :id")
+	@NamedQuery(name="Agenda.buscarPeloNome", query="select a from Agenda a where a.id = :id"),
+	@NamedQuery(name="Agenda.buscarPeloId", query="select a from Agenda a where a.id = :id")
 })
 @Entity // define que serah uma tabela do banco de dados
 @Table(name = "tb_agenda") // opcional, quando necessario muda o nome da agenda

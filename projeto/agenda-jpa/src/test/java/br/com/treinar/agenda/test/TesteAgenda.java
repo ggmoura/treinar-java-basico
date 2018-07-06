@@ -3,7 +3,7 @@ package br.com.treinar.agenda.test;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 
-import org.hibernate.Hibernate;
+//import org.hibernate.Hibernate;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -49,7 +49,7 @@ public class TesteAgenda {
 	
 	public Agenda recuperarAgendaEager() {
 		Agenda c = recuperarAgenda(Long.valueOf(1));
-		Hibernate.initialize(c.getContatos());
+		//Hibernate.initialize(c.getContatos());
 		em.close();
 		return c;
 	}
